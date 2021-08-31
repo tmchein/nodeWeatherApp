@@ -6,6 +6,7 @@ const geocode = require("../utils/geocode");
 const forecast = require("../utils/forecast");
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 dotenv.config();
 
@@ -39,7 +40,7 @@ app.get("/help", (req, res) => {
   res.render("help", {
     title: "Help",
     name: "Juan Rojas",
-    helpText: "This is my help text",
+    helpText: "This is the help section",
   });
 });
 
@@ -97,6 +98,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("\n \n \n \n \n \n \n \n \n \n \n \n Listening on port 3000 ");
+app.listen(port, () => {
+  console.log(`\n \n \n \n \n \n \n \n \n \n \n \n Listening on port ${port}`);
 });
